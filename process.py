@@ -1,5 +1,5 @@
 import scanf as s
-print ", ".join(["sent time", "received time", "delta or aggressor", "type", "SSN", "ISN", "depth", "volume", "price"])
+print ", ".join(["sent time", "received time", "delta or aggressor", "type", "SSN", "ISN", "bid depth", "bid volume", "bid price", "ask depth", "ask volume", "ask price"])
 with open('mdp_book_builder_output_2m.log') as input_file:
 	index_line = 0
 	formated_str = ""
