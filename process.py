@@ -1,8 +1,19 @@
 import scanf as s
+Import cvs
+
+InputFileName = "mdp_book_builder_output_2m.log"
+
+def do():
+
+Csv.writer(...)
+
 print ", ".join(["sent time", "received time", "delta or aggressor", "type", "SSN", "ISN", "bid depth", "bid volume", "bid price", "ask depth", "ask volume", "ask price"])
-with open('mdp_book_builder_output_2m.log') as input_file:
+with open(InputFileName) as input_file:
 	index_line = 0
 	formated_str = ""
+
+        oneRow = []
+
 	for line in input_file:
 		if line == "\n":
 			index_line = 1
@@ -11,7 +22,11 @@ with open('mdp_book_builder_output_2m.log') as input_file:
 
 		if index_line == 0:
 			pass
-		elif index_line == 1: 
+		elif index_line == 1:
+                        # add oneRow to output file
+Cvs.writer(oneRow, ....)
+                        
+                        OneRow = []
 			#print(line)
 			num_segments = len(line.split(" "))
 			#print num_segments
@@ -37,7 +52,9 @@ with open('mdp_book_builder_output_2m.log') as input_file:
 				header1, header2, ssn, isn, sent, recv, indx = s.sscanf(line, "%s %s SSN:%s ISN:%s Sent:%s Received:%s %s")
 				indx = " ".join(line.split()[-6:])
 				header = header1 + header2
-			print ", ".join([sent, recv, str(indx), header, ssn, isn, '']),
+			# print ", ".join([sent, recv, str(indx), header, ssn, isn, '']),
+# add to oneRow
+OneRow += [sent,recv,....]
 		else:
 			#print line.split()
 			elements = line.split()
@@ -47,6 +64,9 @@ with open('mdp_book_builder_output_2m.log') as input_file:
 			field5 = elements[6]
 			field6 = elements[7][1:]
 			if field1 != 'None' or field2 != 'None' or field3 != 'None' or field4 != 'None' or field5 != 'None' or field6 != 'None':
-				print ", ".join([field1, field2, field3, field6, field5, field4, '']),
+				# print ", ".join([field1, field2, field3, field6, field5, field4, '']),
+               # add to oneRow
+OneRow += []
 		index_line += 1
 
+do()
